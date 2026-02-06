@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Queen 💍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ffb7c5;
+            --deep-rose: #d63447;
+            --soft-white: #fff9fb;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--soft-white);
+            font-family: 'Quicksand', sans-serif;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        #sakura-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,183,197,0.2), rgba(255,255,255,0.5));
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            color: var(--deep-rose);
+            margin-bottom: 10px;
+            animation: fadeIn 3s ease-in;
+            padding: 0 20px;
+        }
+
+        .date-badge {
+            background: var(--deep-rose);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .spotify-container {
+            margin: 30px 0;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .letter-container {
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+            white-space: pre-line;
+        }
+
+        .letter-content {
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            text-align: right;
+            color: var(--deep-rose);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .petal {
+            position: absolute;
+            background-color: #ffb7c5;
+            border-radius: 150% 0 150% 0;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sakura-container"></div>
+
+    <section class="hero">
+        <h1>To My Queen, My Hinata...</h1>
+        <div class="date-badge">SINCE NOVEMBER 3, 2024</div>
+        
+        <div class="spotify-container">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Rh96pYJvY676oY6S6An9O?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <p style="font-style: italic; color: var(--deep-rose);">Scroll down for you ❤️</p>
+    </section>
+
+    <div class="letter-container">
+        <div class="letter-content">
+my dearest Mrs M 🥺❤️💍🦢🦋
+
+from the moment I noticed the girl named "Hinata" I had no idea I was looking at the woman who would change my life forever. what started as simple msgs between two people who had chemistry became the safest place my heart has ever known🥺🫶🏼
+
+since the day we made it official on 3 November 2024, you have been more than just my girlfriend, you became my peace, my best friend,my home and the love I once prayed for without even realizing it.♡
+
+we have crossed distance, faced ups and downs, shared laughter, wiped each other's tears and created memories that still replay I. my mind like my favorite movie. from our shy first meeting to our late night talks, our adventures,the games we played, the walks we took and the quiet moments where nothing else mattered but us , every single second with you is a chapter I would relive a infinity times
+
+you have seen me at my strongest and at my most vulnerable, yet you never let go of my hand, your patience, your effort, your sacrifices and the you continue to choose me remind me every day how blessed I am to call you mine🥺❤️😭
+
+thank you for loving me loudly, for believing in us, for travelling miles just to be in my arms and for standing besides me even when life wasn't easy. what we have is not ordinary but it is rare, it is real and it is ours
+
+on this Valentine's day I don't just celebrate our love.....I celebrate you. the wowmns who walked into my life and made it brighter, softer and more meaningful 
+
+I promise to keep choosing you, to keep growing with tand to keep building the beautiful story that is only just beginning
+        </div>
+        <div class="signature">
+            forever yoursss<br>
+            Mr M 🥺❤️💍🦢🫶🏼
+        </div>
+    </div>
+
+    <script>
+        function createPetal() {
+            const container = document.getElementById('sakura-container');
+            if(!container) return;
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.width = Math.random() * 10 + 5 + 'px';
+            petal.style.height = petal.style.width;
+            petal.style.opacity = Math.random();
+            petal.style.animationDuration = Math.random() * 3 + 2 + 's';
+            
+            container.appendChild(petal);
+            
+            setTimeout(() => {
+                petal.remove();
+            }, 5000);
+        }
+        setInterval(createPetal, 300);
+    </script>
+</body>
+</html>
