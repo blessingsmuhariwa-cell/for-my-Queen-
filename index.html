@@ -4,129 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For My Queen 💍</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-pink: #ffb7c5;
-            --deep-rose: #d63447;
-            --soft-white: #fff9fb;
+            --bg-dark: #0f0c29; /* Deep Night Blue */
+            --accent-purple: #302b63;
+            --neon-pink: #ff00cc;
+            --neon-blue: #3333ff;
+            --text-white: #ffffff;
         }
 
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--soft-white);
-            font-family: 'Quicksand', sans-serif;
-            color: #4a4a4a;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-white);
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        #sakura-container {
+        /* Reze Arc Aesthetic: Floating Stars/Embers instead of Petals */
+        #particles-js {
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
             z-index: 0;
         }
 
         .hero {
-            height: 100vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(255,183,197,0.2), rgba(255,255,255,0.5));
             position: relative;
             z-index: 1;
         }
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.2rem;
-            color: var(--deep-rose);
+            font-size: 4rem;
+            text-shadow: 0 0 20px var(--neon-pink), 0 0 40px var(--neon-blue);
             margin-bottom: 10px;
-            animation: fadeIn 3s ease-in;
-            padding: 0 20px;
+            animation: glow 3s infinite alternate;
         }
 
         .date-badge {
-            background: var(--deep-rose);
+            border: 2px solid var(--neon-pink);
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-        }
-
-        .spotify-container {
-            margin: 30px 0;
-            width: 90%;
-            max-width: 400px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            box-shadow: 0 0 15px var(--neon-pink);
         }
 
         .letter-container {
-            max-width: 700px;
-            margin: 0 auto 50px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            line-height: 1.8;
+            max-width: 800px;
+            margin: -50px auto 100px auto;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             z-index: 1;
-            white-space: pre-line;
         }
 
+        /* This applies different colors across your paragraph */
         .letter-content {
-            font-size: 1.1rem;
-            text-align: left;
+            font-size: 1.2rem;
+            line-height: 2;
+            white-space: pre-line;
+            background: linear-gradient(45deg, #fff, #ffb7c5, #8ec5fc, #e0c3fc);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 10s ease infinite;
+            font-weight: 300;
         }
 
         .signature {
-            margin-top: 40px;
+            margin-top: 50px;
             font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             text-align: right;
-            color: var(--deep-rose);
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px var(--neon-pink);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes glow {
+            from { text-shadow: 0 0 20px var(--neon-pink); }
+            to { text-shadow: 0 0 30px var(--neon-blue), 0 0 10px #fff; }
         }
 
-        .petal {
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .star {
             position: absolute;
-            background-color: #ffb7c5;
-            border-radius: 150% 0 150% 0;
-            animation: fall linear infinite;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle var(--duration) infinite;
         }
 
-        @keyframes fall {
-            0% { transform: translateY(-10vh) rotate(0deg); }
-            100% { transform: translateY(110vh) rotate(360deg); }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
     </style>
 </head>
 <body>
 
-    <div id="sakura-container"></div>
+    <div id="particles-js"></div>
 
     <section class="hero">
         <h1>To My Queen, My Hinata...</h1>
-        <div class="date-badge">SINCE NOVEMBER 3, 2024</div>
-        
-        <div class="spotify-container">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Rh96pYJvY676oY6S6An9O?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-
-        <p style="font-style: italic; color: var(--deep-rose);">Scroll down for you ❤️</p>
+        <div class="date-badge">03 . 11 . 2024</div>
+        <p style="margin-top: 30px; opacity: 0.8; letter-spacing: 1px;">For your eyes only ✨</p>
     </section>
 
     <div class="letter-container">
@@ -139,7 +140,7 @@ since the day we made it official on 3 November 2024, you have been more than ju
 
 we have crossed distance, faced ups and downs, shared laughter, wiped each other's tears and created memories that still replay I. my mind like my favorite movie. from our shy first meeting to our late night talks, our adventures,the games we played, the walks we took and the quiet moments where nothing else mattered but us , every single second with you is a chapter I would relive a infinity times
 
-you have seen me at my strongest and at my most vulnerable, yet you never let go of my hand, your patience, your effort, your sacrifices and the you continue to choose me remind me every day how blessed I am to call you mine🥺❤️😭
+you have seen me at my strongest and at my most vulnerable, yet you never let go of my hand, your patience, your effort, your sacrifices and the you continue to choose me remind me every day how blessed I am to call mine🥺❤️😭
 
 thank you for loving me loudly, for believing in us, for travelling miles just to be in my arms and for standing besides me even when life wasn't easy. what we have is not ordinary but it is rare, it is real and it is ours
 
@@ -154,24 +155,22 @@ I promise to keep choosing you, to keep growing with tand to keep building the b
     </div>
 
     <script>
-        function createPetal() {
-            const container = document.getElementById('sakura-container');
-            if(!container) return;
-            const petal = document.createElement('div');
-            petal.classList.add('petal');
-            petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.width = Math.random() * 10 + 5 + 'px';
-            petal.style.height = petal.style.width;
-            petal.style.opacity = Math.random();
-            petal.style.animationDuration = Math.random() * 3 + 2 + 's';
-            
-            container.appendChild(petal);
-            
-            setTimeout(() => {
-                petal.remove();
-            }, 5000);
+        // Create twinkle stars for that Reze Night sky vibe
+        function createStars() {
+            const container = document.getElementById('particles-js');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 'px';
+                star.style.width = size;
+                star.style.height = size;
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+                container.appendChild(star);
+            }
         }
-        setInterval(createPetal, 300);
+        createStars();
     </script>
 </body>
 </html>
